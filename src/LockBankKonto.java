@@ -19,14 +19,14 @@ public class LockBankKonto implements Konto {
 		
 	}
 
-	public void geldAbheben() throws Exception {
-		Scanner sc = new Scanner(System.in);	
+	public void geldAbheben() throws Exception {	
 		double e = 0.00;
 		System.out.println("Wie viel möchten Sie abheben:");
 		boolean ok;
 		do {
 			ok = true;
 			try {
+				Scanner sc = new Scanner(System.in);
 				e = sc.nextDouble();
 				}
 			catch (InputMismatchException ex) {
@@ -48,13 +48,13 @@ public class LockBankKonto implements Konto {
 	}
 
 	public void geldEinzahlen() throws Exception {
-		Scanner sc = new Scanner(System.in);
 		double e = 0.00;
 		System.out.println("Wie viel möchten Sie einzahlen:");
 		boolean ok;
 		do {
 			ok = true;
 			try {
+				Scanner sc = new Scanner(System.in);
 				e = sc.nextDouble();
 				}
 			catch (InputMismatchException ex) {
@@ -73,7 +73,6 @@ public class LockBankKonto implements Konto {
 
 	@Override
 	public void waehleAktion() throws Exception {
-		Scanner sc = new Scanner(System.in);
 		System.out.println("Geld einzahlen(Drücke 0)");
 		System.out.println("Geld abheben(Drücke 1)");
 		System.out.println("Kontostand anzeigen(Drücke 2)");
@@ -83,10 +82,10 @@ public class LockBankKonto implements Konto {
 		do {
 			ok = true;
 			try {
+				Scanner sc = new Scanner(System.in);
 				e = sc.nextInt();
 				}
 			catch (InputMismatchException ex) {
-				System.out.println("Falsche Eingabe! \nVersuchen Sie es erneut: ");
 				ok = false;
 				}
 			if(e>2 || e<0) {
